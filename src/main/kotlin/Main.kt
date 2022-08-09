@@ -6,12 +6,12 @@ fun main() {
 
 fun agoToText(
     onlineTimeAgo: Int) : String = when (onlineTimeAgo) {
-        in 0..60 -> "Был онлайн только что"
-        in 61..(60*60) -> "Был онлайн " + onlineTimeAgo/60 + inRussianMinutes(onlineTimeAgo)
-        in (60*60) + 1..(24*60*60) -> "Был онлайн " + onlineTimeAgo/3600 + inRussianHours(onlineTimeAgo)
-        in (24*60*60) + 1..(48*60*60) -> "Был онлайн сегодня"
-        in (48*60*60) + 1..(72*60*60) -> "Был онлайн вчера"
-        else -> "Был онлайн давно"
+        in 0..60 -> "Был(а) в сети только что"
+        in 61..(60*60) -> "Был(а) в сети " + onlineTimeAgo/60 + inRussianMinutes(onlineTimeAgo)
+        in (60*60) + 1..(24*60*60) -> "Был(а) в сети " + onlineTimeAgo/3600 + inRussianHours(onlineTimeAgo)
+        in (24*60*60) + 1..(48*60*60) -> "Был(а) в сети сегодня"
+        in (48*60*60) + 1..(72*60*60) -> "Был(а) в сети вчера"
+        else -> "Был(а) в сети давно"
     }
 
 fun inRussianMinutes(onlineTimeAgo: Int) : String = when (onlineTimeAgo/60 % 100) {
